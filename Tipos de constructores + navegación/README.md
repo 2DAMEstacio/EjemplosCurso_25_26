@@ -1,4 +1,4 @@
-# 📘 README — Listado de Personas (Flutter)
+# 📘 Listado de Personas
 
 Ejemplo didáctico para repasar:
 
