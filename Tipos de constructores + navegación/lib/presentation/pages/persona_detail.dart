@@ -2,18 +2,33 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tipos_constructores_navegacion/data/models/persona.dart';
 import 'package:flutter_tipos_constructores_navegacion/utils/functions.dart';
 
-class PersonaDetailPage extends StatelessWidget {
+class PersonaDetailPage extends StatefulWidget {
   final Persona persona;
+  final VoidCallback? onToggleVip;
 
-  const PersonaDetailPage({super.key, required this.persona});
+  const PersonaDetailPage({super.key, required this.persona, this.onToggleVip});
+
+  @override
+  State<PersonaDetailPage> createState() => _PersonaDetailPageState();
+}
+
+class _PersonaDetailPageState extends State<PersonaDetailPage> {
+  late bool _isVip;
+
+  @override
+  void initState() {
+    super.initState();
+    _isVip = widget.persona.isVip;
+  }
 
   @override
   Widget build(BuildContext context) {
-    final hasPhoto = persona.photoUrl != null && persona.photoUrl!.isNotEmpty;
+    final hasPhoto =
+        widget.persona.photoUrl != null && widget.persona.photoUrl!.isNotEmpty;
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(persona.name, overflow: TextOverflow.ellipsis),
+        title: Text(widget.persona.name, overflow: TextOverflow.ellipsis),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
@@ -23,12 +38,12 @@ class PersonaDetailPage extends StatelessWidget {
             CircleAvatar(
               radius: 48,
               backgroundImage:
-                  hasPhoto ? NetworkImage(persona.photoUrl!) : null,
+                  hasPhoto ? NetworkImage(widget.persona.photoUrl!) : null,
               child:
                   hasPhoto
                       ? null
                       : Text(
-                        Functions.initials(persona.name),
+                        Functions.initials(widget.persona.name),
                         style: const TextStyle(fontSize: 24),
                       ),
             ),
@@ -38,7 +53,7 @@ class PersonaDetailPage extends StatelessWidget {
               children: [
                 Flexible(
                   child: Text(
-                    persona.name,
+                    widget.persona.name,
                     style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w700,
@@ -46,19 +61,16 @@ class PersonaDetailPage extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),
-                if (persona.isVip) ...[
-                  const SizedBox(width: 6),
-                  const Icon(Icons.star, color: Colors.amber),
-                ],
               ],
             ),
             const SizedBox(height: 6),
             Text(
-              persona.role,
+              widget.persona.role,
               style: Theme.of(context).textTheme.bodyMedium,
               textAlign: TextAlign.center,
             ),
-            if (persona.nick != null && persona.nick!.isNotEmpty) ...[
+            if (widget.persona.nick != null &&
+                widget.persona.nick!.isNotEmpty) ...[
               const SizedBox(height: 8),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -66,13 +78,28 @@ class PersonaDetailPage extends StatelessWidget {
                   const Icon(Icons.alternate_email, size: 16),
                   const SizedBox(width: 4),
                   Flexible(
-                    child: Text(persona.nick!, overflow: TextOverflow.ellipsis),
+                    child: Text(
+                      widget.persona.nick!,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
                 ],
               ),
             ],
             const SizedBox(height: 24),
             // Aquí puedes añadir más info (bio, acciones, etc.)
+            IconButton(
+              iconSize: 72,
+              icon: Icon(
+                Icons.star,
+                color: _isVip ? Colors.amber : Colors.grey,
+              ),
+              onPressed: () {
+                setState(() {
+                  _isVip = !_isVip;
+                });
+              },
+            ),
           ],
         ),
       ),

@@ -1,6 +1,6 @@
 const List<Map<String, dynamic>> listadoPersonas = [
   {
-    'id': '1',
+    'id': 1,
     'name': 'Ada Lovelace',
     'role': 'Pionera de la programación',
     'photo': 'https://i.pravatar.cc/150?img=47',
@@ -8,7 +8,7 @@ const List<Map<String, dynamic>> listadoPersonas = [
     'vip': true,
   },
   {
-    'id': '2',
+    'id': 2,
     'name': 'Grace Hopper',
     'role': 'Rear Admiral · Computer Scientist',
     'photo': 'https://i.pravatar.cc/150?img=12',
@@ -16,7 +16,7 @@ const List<Map<String, dynamic>> listadoPersonas = [
     'vip': true,
   },
   {
-    'id': '3',
+    'id': 3,
     'name': 'Alan Turing',
     'role': 'Criptógrafo · Teórico de la computación',
     'photo': 'https://i.pravatar.cc/150?img=32',
@@ -24,7 +24,7 @@ const List<Map<String, dynamic>> listadoPersonas = [
     'vip': true,
   },
   {
-    'id': '4',
+    'id': 4,
     'name': 'Linus Torvalds',
     'role': 'Creador de Linux',
     'photo': 'https://i.pravatar.cc/150?img=16',
@@ -32,7 +32,7 @@ const List<Map<String, dynamic>> listadoPersonas = [
     'vip': true,
   },
   {
-    'id': '5',
+    'id': 5,
     'name': 'Margaret Hamilton',
     'role': 'Ingeniería de software · NASA',
     'photo': 'https://i.pravatar.cc/150?img=48',
@@ -40,7 +40,7 @@ const List<Map<String, dynamic>> listadoPersonas = [
     'vip': true,
   },
   {
-    'id': '6',
+    'id': 6,
     'name': 'Tim Berners-Lee',
     'role': 'Inventor de la Web',
     'photo': 'https://i.pravatar.cc/150?img=7',
@@ -48,7 +48,7 @@ const List<Map<String, dynamic>> listadoPersonas = [
     'vip': true,
   },
   {
-    'id': '7',
+    'id': 7,
     'name': 'Donald Knuth',
     'role': 'Autor de “The Art of Computer Programming”',
     'photo': 'https://i.pravatar.cc/150?img=27',
@@ -56,7 +56,7 @@ const List<Map<String, dynamic>> listadoPersonas = [
     'vip': false,
   },
   {
-    'id': '8',
+    'id': 8,
     'name': 'Barbara Liskov',
     'role': 'Turing Award · LSP',
     'photo': 'https://i.pravatar.cc/150?img=15',
@@ -64,7 +64,7 @@ const List<Map<String, dynamic>> listadoPersonas = [
     'vip': false,
   },
   {
-    'id': '9',
+    'id': 9,
     'name': 'Guido van Rossum',
     'role': 'Creador de Python',
     'photo': 'https://i.pravatar.cc/150?img=24',
@@ -72,7 +72,7 @@ const List<Map<String, dynamic>> listadoPersonas = [
     'vip': false,
   },
   {
-    'id': '10',
+    'id': 10,
     'name': 'Bjarne Stroustrup',
     'role': 'Creador de C++',
     'photo': 'https://i.pravatar.cc/150?img=6',
@@ -80,21 +80,21 @@ const List<Map<String, dynamic>> listadoPersonas = [
     'vip': false,
   },
   {
-    'id': '11',
+    'id': 11,
     'name': 'Radia Perlman',
     'role': 'Madre de Internet · Spanning-Tree',
     'photo': 'https://i.pravatar.cc/150?img=34',
     'vip': false,
   },
   {
-    'id': '12',
+    'id': 12,
     'name': 'Hedy Lamarr',
     'role': 'Inventora · Espectro ensanchado',
     'nick': '@hedy',
     'vip': false,
   },
   {
-    'id': '13',
+    'id': 13,
     'name': 'Kent Beck',
     'role': 'XP · TDD',
     'photo': 'https://i.pravatar.cc/150?img=5',
@@ -102,7 +102,7 @@ const List<Map<String, dynamic>> listadoPersonas = [
     'vip': false,
   },
   {
-    'id': '14',
+    'id': 14,
     'name': 'Tracy Chou',
     'role': 'Ingeniera · Diversidad en tech',
     'photo': 'https://i.pravatar.cc/150?img=62',
