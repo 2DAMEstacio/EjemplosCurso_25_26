@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_catalog/app/theme/app_palette.dart';
 
 class AppTheme {
   static final TextTheme _textTheme = const TextTheme(
@@ -20,16 +21,27 @@ class AppTheme {
   static ThemeData light = ThemeData(
     useMaterial3: true,
     brightness: Brightness.light,
-    colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF0057D9)),
+    colorScheme: ColorScheme.light(
+      primary: appPaletteLight.primary,
+      onPrimary: appPaletteLight.onPrimary,
+      secondary: appPaletteLight.secondary,
+      onSecondary: appPaletteLight.onSecondary,
+      error: appPaletteLight.danger,
+      onError: appPaletteLight.onDanger,
+    ),
     textTheme: _textTheme,
   );
 
   static ThemeData dark = ThemeData(
     useMaterial3: true,
     brightness: Brightness.dark,
-    colorScheme: ColorScheme.fromSeed(
-      seedColor: const Color(0xFF7BA7FF),
-      brightness: Brightness.dark,
+    colorScheme: ColorScheme.dark(
+      primary: appPaletteDark.primary,
+      onPrimary: appPaletteDark.onPrimary,
+      secondary: appPaletteDark.secondary,
+      onSecondary: appPaletteDark.onSecondary,
+      error: appPaletteDark.danger,
+      onError: appPaletteDark.onDanger,
     ),
     textTheme: _textTheme,
   );

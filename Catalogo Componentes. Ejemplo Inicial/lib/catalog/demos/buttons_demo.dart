@@ -28,6 +28,14 @@ class ButtonsDemo extends StatelessWidget {
             onPressed: () {},
             variant: AppButtonVariant.secondary,
           ),
+          const SizedBox(height: 16),
+          const Text('AppButton – Secondary'),
+          const SizedBox(height: 8),
+          AppButton(
+            label: 'Danger',
+            onPressed: () {},
+            variant: AppButtonVariant.danger,
+          ),
         ],
       ),
     );
