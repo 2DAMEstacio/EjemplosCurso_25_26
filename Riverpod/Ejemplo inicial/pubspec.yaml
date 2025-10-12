@@ -1,0 +1,26 @@
+name: flutter_application_1
+description: "A new Flutter project."
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  dio: ^5.9.0
+  equatable: ^2.0.7
+  flutter:
+    sdk: flutter
+  flutter_riverpod: ^3.0.3
+
+dev_dependencies:
+  custom_lint: ^0.8.0
+  flutter_lints: ^5.0.0
+  flutter_test:
+    sdk: flutter
+  riverpod_lint: ^3.0.3
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/ricky_logo.png
