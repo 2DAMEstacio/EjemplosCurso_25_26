@@ -34,7 +34,7 @@ dependencies:
   uuid: ^4.4.2
 
 environment:
-  sdk: '>=3.3.0 <4.0.0'
+  sdk: ">=3.3.0 <4.0.0"
 ```
 
 ---
@@ -82,6 +82,7 @@ El `TodosNotifier` extiende `AsyncNotifier<List<Todo>>`. Riverpod llama a `build
 - `AsyncError(error, stackTrace)` → fallo en la carga/proceso
 
 ### Ejemplo (resumen)
+
 ```dart
 class TodosNotifier extends AsyncNotifier<List<Todo>> {
   late final TodoUseCases todoUseCases;
@@ -111,6 +112,7 @@ class TodosNotifier extends AsyncNotifier<List<Todo>> {
 ```
 
 ### Uso en la UI con `when`
+
 ```dart
 final state = ref.watch(todosProvider);
 
@@ -128,6 +130,7 @@ body: state.when(
 ```
 
 ### Derivados con `valueOrNull`
+
 ```dart
 final totalTodosProvider = Provider<int>((ref) {
   final todos = ref.watch(todosProvider).valueOrNull ?? const <Todo>[];
@@ -169,7 +172,7 @@ En `LoginPage`, tras un login correcto se muestra un **SnackBar** reactivo graci
    flutter create flutter_todo_list_riverpod
    ```
 2. Copia el contenido de `lib/` del ZIP a tu proyecto.
-3. Asegura las dependencias en `pubspec.yaml` (ver sección *Stack*).
+3. Asegura las dependencias en `pubspec.yaml` (ver sección _Stack_).
 4. Ejecuta:
    ```bash
    flutter pub get
@@ -179,26 +182,3 @@ En `LoginPage`, tras un login correcto se muestra un **SnackBar** reactivo graci
 > **PIN por defecto:** `4242`
 
 ---
-
-## 🧩 Extensiones sugeridas (para práctica en clase)
-
-- **Persistencia real**: reemplazar el datasource en memoria por `SharedPreferences` o SQLite.
-- **Filtros**: Todas / Activas / Completadas (providers derivados).
-- **Validaciones**: evitar títulos duplicados/vacíos, normalizar espacios.
-- **Tests**: unit tests del repositorio y del `TodosNotifier` (mock del datasource).
-- **Theming**: tema claro/oscuro con provider de estado simple.
-- **Rutas**: convertir `AuthGate` en `GoRouter` o `Navigator 2.0`.
-
----
-
-## ❓ Troubleshooting
-
-- **No compila por dependencias**: revisa que `flutter_riverpod`, `equatable` y `uuid` estén en `pubspec.yaml` y ejecuta `flutter pub get`.
-- **No se muestra nada tras login**: verifica que `AuthGate` es la `home` en `main.dart` y que el PIN coincide con `kSecretPin`.
-- **SnackBars no aparecen**: asegúrate de llamar a `showSnackbarLogin(ref, context)` (o mover el `ref.listen` a `initState` si usas `ConsumerStatefulWidget`).
-
----
-
-## 📄 Licencia
-
-Uso docente y experimental. Adáptalo libremente a tus clases y proyectos.
