@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_todo_list_riverpod/core/utils.dart';
 import 'package:flutter_todo_list_riverpod/presentation/auth/providers/auth_providers.dart';
 import 'package:flutter_todo_list_riverpod/presentation/todo/providers/todo_providers.dart';
+import 'package:flutter_todo_list_riverpod/presentation/todo/widgets/todo_drawer.dart';
 import 'package:flutter_todo_list_riverpod/presentation/todo/widgets/todo_no_data_item.dart';
 import 'package:flutter_todo_list_riverpod/presentation/todo/widgets/todo_item.dart';
 
@@ -62,6 +63,7 @@ class TodosPage extends ConsumerWidget {
         loading: () => const Center(child: CircularProgressIndicator()),
         error: (error, _) => Center(child: Text('Error: $error')),
       ),
+      drawer: TodoDrawer(),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () => _showAddDialog(context, ref),
         icon: const Icon(Icons.add),

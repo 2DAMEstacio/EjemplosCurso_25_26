@@ -1,21 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_todo_list_riverpod/presentation/auth/widgets/auth_gate.dart';
+import 'package:flutter_todo_list_riverpod/presentation/preferences/providers/preferences_providers.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const ProviderScope(child: TodoApp()));
 }
 
-class TodoApp extends StatelessWidget {
+class TodoApp extends ConsumerWidget {
   const TodoApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final prefsAsync = ref.watch(preferencesProvider);
+
+    final modoOscuro = prefsAsync.maybeWhen(
+      data: (p) => p.darkmode,
+      orElse: () => false,
+    );
+
+    final dark = ThemeData(
+      useMaterial3: true,
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: Colors.blue,
+        brightness: Brightness.dark,
+      ),
+    );
+
     return MaterialApp(
       title: 'Todo List utilizando Riverpod',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(useMaterial3: true),
+      darkTheme: dark,
+      themeMode: modoOscuro ? ThemeMode.dark : ThemeMode.light,
       home: const AuthGate(),
     );
   }
