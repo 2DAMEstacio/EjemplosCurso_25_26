@@ -1,11 +1,13 @@
 # Flutter Config Mínima (MVC por feature + Riverpod)
 
 Proyecto base en Flutter con arquitectura **por features** y patrón **MVC ligero**:
+
 - **Model** → `data/models`
 - **Controller** → `controllers` (con **Riverpod** `AsyncNotifier`)
 - **View** → `presentation/pages` y `presentation/widgets`
 
 Incluye:
+
 - **Login** simulado con persistencia en **SharedPreferences**
 - **Listado de todos** en memoria (array) con add/toggle/delete
 - **Preferencias** con tema oscuro persistente
@@ -79,16 +81,19 @@ lib/
 ## 🚀 Puesta en marcha
 
 1. **Instalar dependencias**
+
    ```bash
    flutter pub get
    ```
 
 2. **Ejecutar**
+
    ```bash
    flutter run
    ```
 
 3. **Punto de entrada**
+
    - `main.dart` monta `MaterialApp` con `AppTheme` y pone como `home` el `AuthGate(child: TodoListPage())`.
    - `AuthGate` decide en tiempo de ejecución si renderizar **Login** o el **child protegido**.
 
@@ -102,13 +107,14 @@ lib/
 
 ### Auth
 
-- **Provider**: `authControllerProvider`  
+- **Provider**: `authControllerProvider`
 - **Notifier**: `AuthController extends AsyncNotifier<User?>`
   - `build()` restaura sesión leyendo `token`/`email` del repositorio.
   - `login(email, password)` valida, guarda en `SharedPreferences`, publica `User` y refresca.
   - `logout()` limpia `SharedPreferences` y pone `AsyncData(null)`.
 
 **Uso (en AuthGate):**
+
 ```dart
 final authAsync = ref.watch(authControllerProvider);
 return authAsync.when(
@@ -127,6 +133,7 @@ return authAsync.when(
 - **Selector**: `totalTodosProvider` (longitud de la lista)
 
 **Uso:**
+
 ```dart
 final todosAsync = ref.watch(todosProvider);
 todosAsync.when(
@@ -221,7 +228,3 @@ flutter analyze
 ```
 
 ---
-
-## 📜 Licencia
-
-MIT (o la que prefieras).
