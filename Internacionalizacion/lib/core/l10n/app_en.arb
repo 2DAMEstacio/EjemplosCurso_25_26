@@ -1,0 +1,14 @@
+{
+  "@@locale": "en",
+  "appTitle": "i18n Study Buddy",
+  "hello": "Hello, {name}!",
+  "applesCount": "{count, plural, =0{No apples} one{One apple} other{{count} apples}}",
+  "userGender": "{gender, select, male{He} female{She} other{They}} chose English.",
+  "dueDate": "Due on {date}",
+  "price": "Total: {amount}",
+  "openLanguagePicker": "Change language",
+  "concepts": "Concepts",
+  "concept_plural": "Plural",
+  "concept_select": "Select (gender)",
+  "concept_placeholders": "Placeholders (date/number)"
+}

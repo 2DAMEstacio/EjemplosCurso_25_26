@@ -1,0 +1,55 @@
+{
+  "@@locale": "es",
+  "appTitle": "Compañero de estudio i18n",
+
+  "hello": "¡Hola, {name}!",
+  "@hello": {
+    "description": "Saluda al usuario por su nombre.",
+    "placeholders": { "name": { "type": "String" } }
+  },
+
+  "applesCount": "{count, plural, =0{Sin manzanas} one{Una manzana} other{{count} manzanas}}",
+  "@applesCount": {
+    "description": "Ejemplo de pluralización.",
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "userGender": "{gender, select, male{Él} female{Ella} other{Elle}} eligió Español.",
+  "@userGender": {
+    "description": "Ejemplo de Select según género.",
+    "placeholders": { "gender": { "type": "String" } }
+  },
+
+  "dueDate": "Vence el {date}",
+  "@dueDate": {
+    "description": "Placeholder de fecha formateada según la configuración regional.",
+    "placeholders": { "date": { "type": "DateTime", "format": "yMMMd" } }
+  },
+
+  "price": "Total: {amount}",
+  "@price": {
+    "description": "Placeholder de número con formato de moneda.",
+    "placeholders": {
+      "amount": {
+        "type": "num",
+        "format": "currency",
+        "optionalParameters": { "name": "EUR" }
+      }
+    }
+  },
+
+  "openLanguagePicker": "Cambiar idioma",
+  "@openLanguagePicker": { "description": "Texto del botón para abrir el selector de idioma." },
+
+  "concepts": "Conceptos",
+  "@concepts": { "description": "Título general de la sección de conceptos de internacionalización." },
+
+  "concept_plural": "Plural",
+  "@concept_plural": { "description": "Etiqueta del ejemplo de pluralización." },
+
+  "concept_select": "Selecciona (género)",
+  "@concept_select": { "description": "Etiqueta del ejemplo de Select por género." },
+
+  "concept_placeholders": "Placeholders (fecha/número)",
+  "@concept_placeholders": { "description": "Etiqueta del ejemplo de placeholders." }
+}

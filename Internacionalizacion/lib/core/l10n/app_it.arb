@@ -1,0 +1,14 @@
+{
+  "@@locale": "it",
+  "appTitle": "Compagno di studio i18n",
+  "hello": "Ciao, {name}!",
+  "applesCount": "{count, plural, =0{Nessuna mela} one{Una mela} other{{count} mele}}",
+  "userGender": "{gender, select, male{Lui} female{Lei} other{Loro}} ha scelto l'Italiano.",
+  "dueDate": "Scadenza il {date}",
+  "price": "Totale: {amount}",
+  "openLanguagePicker": "Cambia lingua",
+  "concepts": "Concetti",
+  "concept_plural": "Plurale",
+  "concept_select": "Select (genere)",
+  "concept_placeholders": "Segnaposto (data/numero)"
+}
