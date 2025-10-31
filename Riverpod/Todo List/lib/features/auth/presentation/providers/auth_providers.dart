@@ -40,3 +40,8 @@ final isAuthenticatedProvider =
     AsyncNotifierProvider<AuthNotifier, LoggedUser?>(() {
       return AuthNotifier();
     });
+
+final isAuthenticatedBoolProvider = Provider<bool>((ref) {
+  final auth = ref.watch(isAuthenticatedProvider);
+  return auth.value != null;
+});

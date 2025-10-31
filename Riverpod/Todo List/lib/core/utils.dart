@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_todo_list_riverpod/features/auth/presentation/providers/auth_providers.dart';
 
 void showSnackbarLogin(WidgetRef ref, BuildContext context) {
-  ref.listen<bool>(isAuthenticatedProvider, (prev, next) {
+  ref.listen<bool>(isAuthenticatedBoolProvider, (prev, next) {
     if (prev == true && next == false) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(

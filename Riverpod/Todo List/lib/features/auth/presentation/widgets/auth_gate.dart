@@ -10,6 +10,6 @@ class AuthGate extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final isAuthed = ref.watch(isAuthenticatedProvider);
-    return isAuthed != null ? const TodosPage() : const LoginPage();
+    return isAuthed.value != null ? const TodosPage() : const LoginPage();
   }
 }
