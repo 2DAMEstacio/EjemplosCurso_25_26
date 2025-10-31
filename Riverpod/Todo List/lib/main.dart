@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_todo_list_riverpod/presentation/auth/widgets/auth_gate.dart';
-import 'package:flutter_todo_list_riverpod/presentation/preferences/providers/preferences_providers.dart';
+import 'package:flutter_todo_list_riverpod/features/auth/presentation/widgets/auth_gate.dart';
+import 'package:flutter_todo_list_riverpod/features/preferences/presentation/providers/preferences_providers.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

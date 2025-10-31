@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_todo_list_riverpod/presentation/auth/providers/auth_providers.dart';
+import 'package:flutter_todo_list_riverpod/features/auth/presentation/providers/auth_providers.dart';
 
 void showSnackbarLogin(WidgetRef ref, BuildContext context) {
   ref.listen<bool>(isAuthenticatedProvider, (prev, next) {
