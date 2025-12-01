@@ -38,8 +38,6 @@ class FirebaseAuthRepository {
     return 'user';
   }
 
-  // Añade estos métodos al repo
-
   Future<UserCredential> signInWithEmailPassword({
     required String email,
     required String password,
@@ -65,7 +63,6 @@ class FirebaseAuthRepository {
     return cred;
   }
 
-  // Opcional: recuperar contraseña
   Future<void> sendPasswordResetEmail(String email) async {
     await FirebaseAuth.instance.sendPasswordResetEmail(email: email.trim());
   }
